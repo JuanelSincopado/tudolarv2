@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:tudolar/helpers/colors.dart';
 import 'package:tudolar/home.dart';
@@ -6,6 +7,9 @@ import 'package:tudolar/provider/conversor.provider.dart';
 import 'package:tudolar/provider/moneda.provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+
   runApp(const MyApp());
 }
 

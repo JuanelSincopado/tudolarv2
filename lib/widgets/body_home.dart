@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:tudolar/provider/moneda.provider.dart';
 import 'package:tudolar/widgets/average_card.dart';
+import 'package:tudolar/widgets/banner.dart';
 import 'package:tudolar/widgets/form.dart';
 import 'package:tudolar/widgets/title.dart';
 
@@ -33,13 +34,7 @@ class BodyHome extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Text(
-            'Powered by BCV',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.grey,
-            ),
-          ),
+          MyBanner(),
         ],
       ),
     );

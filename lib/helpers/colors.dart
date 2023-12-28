@@ -7,4 +7,5 @@ class AppColors {
   static const letterLight = Color(0xFFa9a9a9);
   static const red = Color.fromARGB(255, 221, 89, 89);
   static const yellow = Color.fromARGB(255, 255, 221, 89);
+  static const green = Color.fromARGB(255, 74, 143, 74);
 }

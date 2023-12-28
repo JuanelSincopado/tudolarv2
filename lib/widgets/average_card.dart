@@ -54,7 +54,7 @@ class AverageCard extends StatelessWidget {
           CurrencyValue(
             currency: "€",
             value: euro,
-            color: AppColors.yellow,
+            color: AppColors.green,
           ),
         ],
       ),
