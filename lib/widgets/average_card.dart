@@ -36,10 +36,24 @@ class AverageCard extends StatelessWidget {
                 ),
               ),
               Text(
-                'BCV',
+                'B',
+                style: TextStyle(
+                  fontSize: 25,
+                  color: AppColors.yellow,
+                ),
+              ),
+              Text(
+                'C',
                 style: TextStyle(
                   fontSize: 25,
                   color: AppColors.primary,
+                ),
+              ),
+              Text(
+                'V',
+                style: TextStyle(
+                  fontSize: 25,
+                  color: AppColors.red,
                 ),
               ),
             ],
@@ -48,13 +62,28 @@ class AverageCard extends StatelessWidget {
           CurrencyValue(
             currency: "\$",
             value: dolar,
-            color: AppColors.red,
+            color: AppColors.letterDark,
           ),
           const SizedBox(height: 10),
           CurrencyValue(
             currency: "€",
             value: euro,
-            color: AppColors.green,
+            color: AppColors.letterDark,
+          ),
+          const SizedBox(height: 10),
+          if (!monedaProvider.isOnline)
+            const Icon(
+              Icons.wifi_off,
+              color: AppColors.red,
+            ),
+          const SizedBox(height: 10),
+          Text(
+            "Actualizado el ${monedaProvider.date.day}/${monedaProvider.date.month}/${monedaProvider.date.year} ${monedaProvider.date.hour}:${monedaProvider.date.minute}",
+            style: const TextStyle(
+              fontSize: 15,
+              color: AppColors.letterDark,
+            ),
+            textAlign: TextAlign.center,
           ),
         ],
       ),

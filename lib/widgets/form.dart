@@ -42,6 +42,7 @@ class FormBodyHome extends StatelessWidget {
           padding: const EdgeInsets.all(5),
           decoration: const BoxDecoration(
             color: AppColors.letterLight,
+            borderRadius: BorderRadius.all(Radius.circular(15)),
           ),
           child: Text(
             conversorprovider.valueSecond,

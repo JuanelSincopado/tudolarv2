@@ -15,28 +15,25 @@ class BodyHome extends StatelessWidget {
     final monedaProvider = Provider.of<MonedaProvider>(context);
 
     return SmartRefresher(
-      controller: monedaProvider.controller,
-      onRefresh: () {
-        monedaProvider.onRefresh();
-      },
-      child: const Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Header(),
-                SizedBox(height: 20),
-                AverageCard(),
-                SizedBox(height: 40),
-                FormBodyHome(),
-              ],
+        controller: monedaProvider.controller,
+        onRefresh: monedaProvider.onRefresh,
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Header(),
+                  SizedBox(height: 20),
+                  AverageCard(),
+                  SizedBox(height: 20),
+                  FormBodyHome(),
+                ],
+              ),
             ),
-          ),
-          Spacer(),
-          MyBanner(),
-        ],
-      ),
-    );
+            const Spacer(),
+            if (monedaProvider.isOnline) const MyBanner(),
+          ],
+        ));
   }
 }

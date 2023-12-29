@@ -10,7 +10,6 @@ class MyBanner extends StatefulWidget {
 
 class _MyBannerState extends State<MyBanner> {
   BannerAd? _bannerAd;
-  bool _isLoaded = false;
 
   void loadAd() {
     _bannerAd = BannerAd(
@@ -21,9 +20,6 @@ class _MyBannerState extends State<MyBanner> {
         // Called when an ad is successfully received.
         onAdLoaded: (ad) {
           debugPrint('$ad loaded.');
-          setState(() {
-            _isLoaded = true;
-          });
         },
         // Called when an ad request failed.
         onAdFailedToLoad: (ad, err) {
@@ -45,7 +41,7 @@ class _MyBannerState extends State<MyBanner> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: _bannerAd != null && _isLoaded
+      child: _bannerAd != null
           ? SizedBox(
               width: _bannerAd!.size.width.toDouble(),
               height: _bannerAd!.size.height.toDouble(),
