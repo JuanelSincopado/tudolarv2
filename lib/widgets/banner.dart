@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -13,7 +15,9 @@ class _MyBannerState extends State<MyBanner> {
 
   void loadAd() {
     _bannerAd = BannerAd(
-      adUnitId: "ca-app-pub-7365229449778644/5822679455",
+      adUnitId: Platform.isAndroid
+          ? "ca-app-pub-7365229449778644/5822679455"
+          : "ca-app-pub-7365229449778644/9022508116",
       request: const AdRequest(),
       size: AdSize.banner,
       listener: BannerAdListener(
