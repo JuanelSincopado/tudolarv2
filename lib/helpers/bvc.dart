@@ -14,10 +14,6 @@ class BCV {
         .then((HttpClientResponse response) =>
             response.transform(utf8.decoder).join());
 
-    // final response = await http.get(Uri.parse('https://www.bcv.org.ve/'));
-
-    // print(response);
-
     final $ = html.parse(response);
 
     final List exchangeRates = [
